@@ -1,0 +1,19 @@
+export const ADD_INPUT = 'ADD_INPUT';
+export const GET_PROCESSED_INPUTS = 'GET_PROCESSED_INPUTS';
+export const DELETE_INPUT = 'DELETE_INPUT';
+export const GET_ATHLETES = 'GET_ATHLETES';
+export const DELETE_ATHLETE = 'DELETE_ATHLETE';
+export const ADD_ATHLETE = 'ADD_ATHLETE';
+export const GET_ERRORS = 'GET_ERRORS';
+export const CREATE_MESSAGE = 'CREATE_MESSAGE';
+export const USER_LOADING = 'USER_LOADING';
+export const USER_LOADED = 'USER_LOADED';
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const REGISTER_FAIL = 'REGISTER_FAIL';
+export const CLEAR_INPUTS = 'CLEAR_INPUTS';
+export const CLEAR_ATHLETES = 'CLEAR_ATHLETES';
+
