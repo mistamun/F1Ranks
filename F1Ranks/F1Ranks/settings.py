@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'knox',
     'accounts',
     'employee',
+    'team',
 ]
 
 # REST_FRAMEWORK = {
