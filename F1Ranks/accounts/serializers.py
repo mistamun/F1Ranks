@@ -10,6 +10,13 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'email')
 
 
+# Register Employment Serializer
+class EmploymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RankedUser
+        fields = ('id', 'username', 'employment')
+
+
 # Register Serializer
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:

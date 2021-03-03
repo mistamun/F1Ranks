@@ -98,6 +98,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./F1Ranks/frontend/src/actions/employees.js":
+/*!***************************************************!*\
+  !*** ./F1Ranks/frontend/src/actions/employees.js ***!
+  \***************************************************/
+/*! exports provided: getEmployees, deleteEmployee, addEmployee */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getEmployees\", function() { return getEmployees; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"deleteEmployee\", function() { return deleteEmployee; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"addEmployee\", function() { return addEmployee; });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./types */ \"./F1Ranks/frontend/src/actions/types.js\");\n/* harmony import */ var _messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./messages */ \"./F1Ranks/frontend/src/actions/messages.js\");\n/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./auth */ \"./F1Ranks/frontend/src/actions/auth.js\");\n\n\n\n\nvar getEmployees = function getEmployees() {\n  return function (dispatch, getState) {\n    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/employee/', Object(_auth__WEBPACK_IMPORTED_MODULE_3__[\"tokenConfig\"])(getState)).then(function (res) {\n      dispatch({\n        type: _types__WEBPACK_IMPORTED_MODULE_1__[\"GET_EMPLOYEES\"],\n        payload: res.data\n      });\n    }).catch(function (err) {\n      return console.log(err);\n    });\n  };\n};\nvar deleteEmployee = function deleteEmployee(id) {\n  return function (dispatch, getState) {\n    axios__WEBPACK_IMPORTED_MODULE_0___default.a.delete(\"/api/employee/\".concat(id, \"/\"), Object(_auth__WEBPACK_IMPORTED_MODULE_3__[\"tokenConfig\"])(getState)).then(function (res) {\n      dispatch(Object(_messages__WEBPACK_IMPORTED_MODULE_2__[\"createMessage\"])({\n        deleteEmployee: 'Employee Deleted'\n      }));\n      dispatch({\n        type: _types__WEBPACK_IMPORTED_MODULE_1__[\"DELETE_EMPLOYEE\"],\n        payload: id\n      });\n    }).catch(function (err) {\n      return console.log(err);\n    });\n  };\n};\nvar addEmployee = function addEmployee(employee) {\n  return function (dispatch, getState) {\n    axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/employee/', employee, Object(_auth__WEBPACK_IMPORTED_MODULE_3__[\"tokenConfig\"])(getState)).then(function (res) {\n      dispatch({\n        type: _types__WEBPACK_IMPORTED_MODULE_1__[\"ADD_EMPLOYEE\"],\n        payload: res.data\n      });\n    }).catch(function (err) {\n      return console.log(err);\n    });\n  };\n};\n\n//# sourceURL=webpack:///./F1Ranks/frontend/src/actions/employees.js?");
+
+/***/ }),
+
 /***/ "./F1Ranks/frontend/src/actions/messages.js":
 /*!**************************************************!*\
   !*** ./F1Ranks/frontend/src/actions/messages.js ***!
@@ -114,11 +126,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!***********************************************!*\
   !*** ./F1Ranks/frontend/src/actions/types.js ***!
   \***********************************************/
-/*! exports provided: ADD_INPUT, GET_PROCESSED_INPUTS, DELETE_INPUT, GET_ATHLETES, DELETE_ATHLETE, ADD_ATHLETE, GET_ERRORS, CREATE_MESSAGE, USER_LOADING, USER_LOADED, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS, REGISTER_SUCCESS, REGISTER_FAIL, CLEAR_INPUTS, CLEAR_ATHLETES */
+/*! exports provided: GET_EMPLOYEES, DELETE_EMPLOYEE, ADD_EMPLOYEE, GET_ERRORS, CREATE_MESSAGE, USER_LOADING, USER_LOADED, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT_SUCCESS, REGISTER_SUCCESS, REGISTER_FAIL, CLEAR_EMPLOYEES */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ADD_INPUT\", function() { return ADD_INPUT; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GET_PROCESSED_INPUTS\", function() { return GET_PROCESSED_INPUTS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"DELETE_INPUT\", function() { return DELETE_INPUT; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GET_ATHLETES\", function() { return GET_ATHLETES; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"DELETE_ATHLETE\", function() { return DELETE_ATHLETE; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ADD_ATHLETE\", function() { return ADD_ATHLETE; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GET_ERRORS\", function() { return GET_ERRORS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CREATE_MESSAGE\", function() { return CREATE_MESSAGE; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"USER_LOADING\", function() { return USER_LOADING; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"USER_LOADED\", function() { return USER_LOADED; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"AUTH_ERROR\", function() { return AUTH_ERROR; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"LOGIN_SUCCESS\", function() { return LOGIN_SUCCESS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"LOGIN_FAIL\", function() { return LOGIN_FAIL; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"LOGOUT_SUCCESS\", function() { return LOGOUT_SUCCESS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"REGISTER_SUCCESS\", function() { return REGISTER_SUCCESS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"REGISTER_FAIL\", function() { return REGISTER_FAIL; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CLEAR_INPUTS\", function() { return CLEAR_INPUTS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CLEAR_ATHLETES\", function() { return CLEAR_ATHLETES; });\nvar ADD_INPUT = 'ADD_INPUT';\nvar GET_PROCESSED_INPUTS = 'GET_PROCESSED_INPUTS';\nvar DELETE_INPUT = 'DELETE_INPUT';\nvar GET_ATHLETES = 'GET_ATHLETES';\nvar DELETE_ATHLETE = 'DELETE_ATHLETE';\nvar ADD_ATHLETE = 'ADD_ATHLETE';\nvar GET_ERRORS = 'GET_ERRORS';\nvar CREATE_MESSAGE = 'CREATE_MESSAGE';\nvar USER_LOADING = 'USER_LOADING';\nvar USER_LOADED = 'USER_LOADED';\nvar AUTH_ERROR = 'AUTH_ERROR';\nvar LOGIN_SUCCESS = 'LOGIN_SUCCESS';\nvar LOGIN_FAIL = 'LOGIN_FAIL';\nvar LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';\nvar REGISTER_SUCCESS = 'REGISTER_SUCCESS';\nvar REGISTER_FAIL = 'REGISTER_FAIL';\nvar CLEAR_INPUTS = 'CLEAR_INPUTS';\nvar CLEAR_ATHLETES = 'CLEAR_ATHLETES';\n\n//# sourceURL=webpack:///./F1Ranks/frontend/src/actions/types.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GET_EMPLOYEES\", function() { return GET_EMPLOYEES; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"DELETE_EMPLOYEE\", function() { return DELETE_EMPLOYEE; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ADD_EMPLOYEE\", function() { return ADD_EMPLOYEE; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"GET_ERRORS\", function() { return GET_ERRORS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CREATE_MESSAGE\", function() { return CREATE_MESSAGE; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"USER_LOADING\", function() { return USER_LOADING; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"USER_LOADED\", function() { return USER_LOADED; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"AUTH_ERROR\", function() { return AUTH_ERROR; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"LOGIN_SUCCESS\", function() { return LOGIN_SUCCESS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"LOGIN_FAIL\", function() { return LOGIN_FAIL; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"LOGOUT_SUCCESS\", function() { return LOGOUT_SUCCESS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"REGISTER_SUCCESS\", function() { return REGISTER_SUCCESS; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"REGISTER_FAIL\", function() { return REGISTER_FAIL; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"CLEAR_EMPLOYEES\", function() { return CLEAR_EMPLOYEES; });\nvar GET_EMPLOYEES = 'GET_EMPLOYEES';\nvar DELETE_EMPLOYEE = 'DELETE_EMPLOYEE';\nvar ADD_EMPLOYEE = 'ADD_EMPLOYEE';\nvar GET_ERRORS = 'GET_ERRORS';\nvar CREATE_MESSAGE = 'CREATE_MESSAGE';\nvar USER_LOADING = 'USER_LOADING';\nvar USER_LOADED = 'USER_LOADED';\nvar AUTH_ERROR = 'AUTH_ERROR';\nvar LOGIN_SUCCESS = 'LOGIN_SUCCESS';\nvar LOGIN_FAIL = 'LOGIN_FAIL';\nvar LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';\nvar REGISTER_SUCCESS = 'REGISTER_SUCCESS';\nvar REGISTER_FAIL = 'REGISTER_FAIL';\nvar CLEAR_EMPLOYEES = 'CLEAR_EMPLOYEES';\n\n//# sourceURL=webpack:///./F1Ranks/frontend/src/actions/types.js?");
 
 /***/ }),
 
@@ -202,7 +214,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return InputDashboard; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction InputDashboard() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__[\"Fragment\"], null);\n}\n\n//# sourceURL=webpack:///./F1Ranks/frontend/src/components/rankings/Dashboard.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return InputDashboard; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Rankings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Rankings */ \"./F1Ranks/frontend/src/components/rankings/Rankings.js\");\n\n\nfunction InputDashboard() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__[\"Fragment\"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Rankings__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n}\n\n//# sourceURL=webpack:///./F1Ranks/frontend/src/components/rankings/Dashboard.js?");
+
+/***/ }),
+
+/***/ "./F1Ranks/frontend/src/components/rankings/Rankings.js":
+/*!**************************************************************!*\
+  !*** ./F1Ranks/frontend/src/components/rankings/Rankings.js ***!
+  \**************************************************************/
+/*! exports provided: Rankings, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Rankings\", function() { return Rankings; });\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/createClass.js\");\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/inherits.js\");\n/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js\");\n/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/getPrototypeOf.js\");\n/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prop-types */ \"./node_modules/prop-types/index.js\");\n/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);\n/* harmony import */ var _actions_employees__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/employees */ \"./F1Ranks/frontend/src/actions/employees.js\");\n\n\n\n\n\n\nfunction _createSuper(Derived) { return function () { var Super = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, result); }; }\n\nfunction _isNativeReflectConstruct() { if (typeof Reflect === \"undefined\" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === \"function\") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }\n\n\n\n\n\nvar Rankings = /*#__PURE__*/function (_Component) {\n  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_2___default()(Rankings, _Component);\n\n  var _super = _createSuper(Rankings);\n\n  function Rankings() {\n    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Rankings);\n\n    return _super.apply(this, arguments);\n  }\n\n  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(Rankings, [{\n    key: \"componentDidMount\",\n    value: function componentDidMount() {\n      this.props.getEmployees();\n    }\n  }, {\n    key: \"render\",\n    value: function render() {\n      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_5__[\"Fragment\"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(\"h2\", null, \"users\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(\"table\", {\n        className: \"table table-striped\"\n      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(\"thead\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(\"tr\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(\"th\", null, \"ID\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(\"th\", null, \"Name\"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(\"tbody\", null, this.props.employees.map(function (employee) {\n        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(\"tr\", {\n          key: employee.id\n        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(\"td\", null, employee.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(\"td\", null, employee.name));\n      }))));\n    }\n  }]);\n\n  return Rankings;\n}(react__WEBPACK_IMPORTED_MODULE_5__[\"Component\"]);\nRankings.propTypes = {\n  employees: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.array.isRequired,\n  getEmployees: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func.isRequired\n};\n\nvar mapStateToProps = function mapStateToProps(state) {\n  return {\n    employees: state.employees.employees\n  };\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_6__[\"connect\"])(mapStateToProps, {\n  getEmployees: _actions_employees__WEBPACK_IMPORTED_MODULE_8__[\"getEmployees\"]\n})(Rankings));\n\n//# sourceURL=webpack:///./F1Ranks/frontend/src/components/rankings/Rankings.js?");
 
 /***/ }),
 
@@ -230,6 +254,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bab
 
 /***/ }),
 
+/***/ "./F1Ranks/frontend/src/reducers/employees.js":
+/*!****************************************************!*\
+  !*** ./F1Ranks/frontend/src/reducers/employees.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ \"./node_modules/@babel/runtime/helpers/toConsumableArray.js\");\n/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ \"./node_modules/@babel/runtime/helpers/defineProperty.js\");\n/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _actions_types_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/types.js */ \"./F1Ranks/frontend/src/actions/types.js\");\n\n\n\nfunction ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1___default()(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }\n\n\nvar initialState = {\n  employees: []\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  switch (action.type) {\n    case _actions_types_js__WEBPACK_IMPORTED_MODULE_2__[\"GET_EMPLOYEES\"]:\n      return _objectSpread({}, state, {\n        employees: action.payload\n      });\n\n    case _actions_types_js__WEBPACK_IMPORTED_MODULE_2__[\"DELETE_EMPLOYEE\"]:\n      return _objectSpread({}, state, {\n        employees: state.employees.filter(function (employee) {\n          return employee.id !== action.payload;\n        })\n      });\n\n    case _actions_types_js__WEBPACK_IMPORTED_MODULE_2__[\"ADD_EMPLOYEE\"]:\n      return _objectSpread({}, state, {\n        employees: [].concat(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(state.employees), [action.payload])\n      });\n\n    case _actions_types_js__WEBPACK_IMPORTED_MODULE_2__[\"CLEAR_EMPLOYEES\"]:\n      return _objectSpread({}, state, {\n        employees: []\n      });\n\n    default:\n      return state;\n  }\n});\n\n//# sourceURL=webpack:///./F1Ranks/frontend/src/reducers/employees.js?");
+
+/***/ }),
+
 /***/ "./F1Ranks/frontend/src/reducers/errors.js":
 /*!*************************************************!*\
   !*** ./F1Ranks/frontend/src/reducers/errors.js ***!
@@ -250,7 +286,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _act
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _errors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./errors */ \"./F1Ranks/frontend/src/reducers/errors.js\");\n/* harmony import */ var _messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./messages */ \"./F1Ranks/frontend/src/reducers/messages.js\");\n/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./auth */ \"./F1Ranks/frontend/src/reducers/auth.js\");\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  errors: _errors__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  messages: _messages__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  auth: _auth__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n}));\n\n//# sourceURL=webpack:///./F1Ranks/frontend/src/reducers/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _errors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./errors */ \"./F1Ranks/frontend/src/reducers/errors.js\");\n/* harmony import */ var _messages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./messages */ \"./F1Ranks/frontend/src/reducers/messages.js\");\n/* harmony import */ var _auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./auth */ \"./F1Ranks/frontend/src/reducers/auth.js\");\n/* harmony import */ var _employees__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./employees */ \"./F1Ranks/frontend/src/reducers/employees.js\");\n\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  employees: _employees__WEBPACK_IMPORTED_MODULE_4__[\"default\"],\n  errors: _errors__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  messages: _messages__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n  auth: _auth__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n}));\n\n//# sourceURL=webpack:///./F1Ranks/frontend/src/reducers/index.js?");
 
 /***/ }),
 
@@ -275,6 +311,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _act
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-devtools-extension */ \"./node_modules/redux-devtools-extension/index.js\");\n/* harmony import */ var redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-thunk */ \"./node_modules/redux-thunk/es/index.js\");\n/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reducers */ \"./F1Ranks/frontend/src/reducers/index.js\");\n\n\n\n\nvar initialState = {};\nvar middleware = [redux_thunk__WEBPACK_IMPORTED_MODULE_2__[\"default\"]];\nvar store = Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"createStore\"])(_reducers__WEBPACK_IMPORTED_MODULE_3__[\"default\"], initialState, Object(redux_devtools_extension__WEBPACK_IMPORTED_MODULE_1__[\"composeWithDevTools\"])(redux__WEBPACK_IMPORTED_MODULE_0__[\"applyMiddleware\"].apply(void 0, middleware)));\n/* harmony default export */ __webpack_exports__[\"default\"] = (store);\n\n//# sourceURL=webpack:///./F1Ranks/frontend/src/store.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _arrayLikeToArray(arr, len) {\n  if (len == null || len > arr.length) len = arr.length;\n\n  for (var i = 0, arr2 = new Array(len); i < len; i++) {\n    arr2[i] = arr[i];\n  }\n\n  return arr2;\n}\n\nmodule.exports = _arrayLikeToArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/arrayLikeToArray.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ \"./node_modules/@babel/runtime/helpers/arrayLikeToArray.js\");\n\nfunction _arrayWithoutHoles(arr) {\n  if (Array.isArray(arr)) return arrayLikeToArray(arr);\n}\n\nmodule.exports = _arrayWithoutHoles;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js?");
 
 /***/ }),
 
@@ -414,6 +472,28 @@ eval("function _inheritsLoose(subClass, superClass) {\n  subClass.prototype = Ob
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _iterableToArray(iter) {\n  if (typeof Symbol !== \"undefined\" && Symbol.iterator in Object(iter)) return Array.from(iter);\n}\n\nmodule.exports = _iterableToArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/iterableToArray.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _nonIterableSpread() {\n  throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\");\n}\n\nmodule.exports = _nonIterableSpread;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/nonIterableSpread.js?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js":
 /*!************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/objectWithoutProperties.js ***!
@@ -458,6 +538,17 @@ eval("function _setPrototypeOf(o, p) {\n  module.exports = _setPrototypeOf = Obj
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ \"./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js\");\n\nvar iterableToArray = __webpack_require__(/*! ./iterableToArray */ \"./node_modules/@babel/runtime/helpers/iterableToArray.js\");\n\nvar unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray */ \"./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js\");\n\nvar nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ \"./node_modules/@babel/runtime/helpers/nonIterableSpread.js\");\n\nfunction _toConsumableArray(arr) {\n  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();\n}\n\nmodule.exports = _toConsumableArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/toConsumableArray.js?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/typeof.js":
 /*!*******************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
@@ -466,6 +557,17 @@ eval("function _setPrototypeOf(o, p) {\n  module.exports = _setPrototypeOf = Obj
 /***/ (function(module, exports) {
 
 eval("function _typeof(obj) {\n  \"@babel/helpers - typeof\";\n\n  if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") {\n    module.exports = _typeof = function _typeof(obj) {\n      return typeof obj;\n    };\n  } else {\n    module.exports = _typeof = function _typeof(obj) {\n      return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj;\n    };\n  }\n\n  return _typeof(obj);\n}\n\nmodule.exports = _typeof;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/typeof.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ \"./node_modules/@babel/runtime/helpers/arrayLikeToArray.js\");\n\nfunction _unsupportedIterableToArray(o, minLen) {\n  if (!o) return;\n  if (typeof o === \"string\") return arrayLikeToArray(o, minLen);\n  var n = Object.prototype.toString.call(o).slice(8, -1);\n  if (n === \"Object\" && o.constructor) n = o.constructor.name;\n  if (n === \"Map\" || n === \"Set\") return Array.from(n);\n  if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);\n}\n\nmodule.exports = _unsupportedIterableToArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js?");
 
 /***/ }),
 
